@@ -1,8 +1,3 @@
-//event listener: click 
-    //if they click male, filter fetch data for "Male"
-    //if they click female, filter fetch data for "Female"
-    //if they click other, filter fetch data for "-"
-
 //variables for our selecting user's choice 
 const inputGender = document.querySelectorAll('#genderP input')
 const inputHeight = document.querySelectorAll('#heightP input')
@@ -52,7 +47,7 @@ const sortGender = (gender, object) => {
 //function sortHeight that takes in selectedGender array and creates new array 
 //function convertHeight that converts original ft/in value to integer value (in inches)
 inputHeight[0].addEventListener('click', ()=>{
-    //console.log(selectedGender.filter(object => sortHeight(0 , 65 , object)))
+    console.log(selectedGender.filter(object => sortHeight(0 , 65 , object)))
     selectedHeight = selectedGender.filter(object => sortHeight(0 , 65 , object))
 })
 
@@ -79,7 +74,7 @@ const convertHeight = (original) => {
 //"click" event listeners for weight question
 //function sortWeight that takes in selectedHeight and creates a new array 
 inputWeight[0].addEventListener('click', ()=>{
-    //console.log(selectedHeight.filter(object => sortWeight(0 , 150 , object)))
+    console.log(selectedHeight.filter(object => sortWeight(0 , 150 , object)))
     selectedWeight = selectedHeight.filter(object => sortWeight(0 , 150 , object))
     
 })
@@ -120,33 +115,45 @@ const convertWeight = (original) => {
         //"Silver"
         //"Gold"
         //"Indigo"
-    //need to convert some values from array that are lowercase like "black" and "blond" to uppercase "Black" and "Blond"
 
 inputHairColor[0].addEventListener('click', ()=>{
-    console.log(selectedWeight.filter(object => sortHairColor('Black', object)))
+    //console.log(selectedWeight.filter(object => sortHairColor('Black', object)))
+    finalArray = selectedWeight.filter(object => sortHairColor('Black', object))
 })
 
 inputHairColor[1].addEventListener('click', ()=>{
-    console.log(selectedWeight.filter(object => sortHairColor('Brown', object)))
+    //console.log(selectedWeight.filter(object => sortHairColor('Brown', object)))
+    finalArray = selectedWeight.filter(object => sortHairColor('Brown', object))
 })
 
 inputHairColor[2].addEventListener('click', ()=>{
-    console.log(selectedWeight.filter(object => sortHairColor('Blond', object)))
+    //console.log(selectedWeight.filter(object => sortHairColor('Blond', object)))
+    finalArray = selectedWeight.filter(object => sortHairColor('Blond', object))
 })
 
 inputHairColor[3].addEventListener('click', ()=>{
-    console.log(selectedWeight.filter(object => sortHairColor('White', object)))
+    //console.log(selectedWeight.filter(object => sortHairColor('White', object)))
+    finalArray = selectedWeight.filter(object => sortHairColor('White', object))
 })
 
 inputHairColor[4].addEventListener('click', ()=>{
-    console.log(selectedWeight.filter(object => sortHairColor('No Hair', object)))
+    //console.log(selectedWeight.filter(object => sortHairColor('No Hair', object)))
+    finalArray = selectedWeight.filter(object => sortHairColor('No Hair', object))
 })
 
-// inputHairColor[5].addEventListener('click', ()=>{
-//     console.log(selectedWeight.filter(object => sortHairColor('Red', object)))
-// })
+inputHairColor[5].addEventListener('click', ()=>{
+    //console.log(selectedWeight.filter(object => sortOtherHairColor(object)))
+    finalArray = selectedWeight.filter(object => sortOtherHairColor(object))
+})
 
 const sortHairColor = (hairColor, object) => {
-    return object.appearance.hairColor === hairColor
+    return convertHairColorToUpper(object.appearance.hairColor) === hairColor
 }
 
+const convertHairColorToUpper = (haircolor) => {
+    return haircolor.charAt(0).toUpperCase() + haircolor.substring(1)
+}
+
+const sortOtherHairColor = (object) => {
+    return object.appearance.hairColor === "Pink" || object.appearance.hairColor === "Green" || object.appearance.hairColor === "Auburn" || object.appearance.hairColor === "Yellow" || object.appearance.hairColor === "-" || object.appearance.hairColor === "Grey" || object.appearance.hairColor === "Blue" || object.appearance.hairColor === "Purple" || object.appearance.hairColor === "Silver" || object.appearance.hairColor === "Gold" || object.appearance.hairColor === "Indigo" || object.appearance.hairColor === "Strawberry Blond" || object.appearance.hairColor === "Red" || object.appearance.hairColor === "Orange"
+}
