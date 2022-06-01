@@ -1,5 +1,6 @@
-html {
+html, body {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -58,3 +59,14 @@ div.form-div {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
 }
+
+
+.randomImg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -450px;
+  margin-left: -240px;
+  box-shadow: 0 250px 500px 0 rgba(0, 0, 0, 1), 0 250px 500px 0 rgba(0, 0, 0, 0.8);
+}
+
