@@ -3,6 +3,31 @@
     //if they click female, filter fetch data for "Female"
     //if they click other, filter fetch data for "-"
 
+// disable all child of hairForm
+
+const genderForm = document.getElementById('gender-form')
+const heightForm = document.getElementById('height-form')
+const weightForm = document.getElementById('weight-form')
+const hairForm = document.getElementById('hair-form')
+
+function disableForm(form){
+    const allChildren = Array.from(form.getElementsByTagName('*'))
+    allChildren.forEach(child => {
+        child.disabled = true
+    })
+}
+
+function enableForm(form){
+    const allChildren = Array.from(form.getElementsByTagName('*'))
+    allChildren.forEach(child => {
+        child.disabled = false
+    })
+}
+
+disableForm(heightForm)
+disableForm(weightForm)
+disableForm(hairForm)
+
 //variables for our selecting user's choice 
 const inputGender = document.querySelectorAll('#genderP input')
 const inputHeight = document.querySelectorAll('#heightP input')
