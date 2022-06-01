@@ -39,19 +39,22 @@ h2 {
   font-size: 20px;
 }
 
+div.form-div {
+  display: flex;
+  justify-content: center;
+}
+
 #gender {
   font-size: large;
-  text-align: center;
+
 }
 
 .fieldsets {
-  width: 300px;
+  width: 250px;
+
 }
 
 .forms {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
-  width: 150px;
-  height: 100px;
-  margin: auto;
 }
