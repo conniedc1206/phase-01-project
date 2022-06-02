@@ -153,19 +153,6 @@ const convertWeight = (original) => {
 
 //"click" event listeners for hair color question
 //function sortHairColor that takes in selectedWeight and creates new array
-//NEED TO WORK ON:
-//inputHairColor[5] needs to accept multiple hair color values
-//"Red"
-//"Green"
-//"Auburn"
-//"Yellow"
-//"-"
-//"Grey"
-//"Blue"
-//"Purple"
-//"Silver"
-//"Gold"
-//"Indigo"
 
 inputHairColor[ 0 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortHairColor('Black', object)))
@@ -277,10 +264,6 @@ submitButton.addEventListener('click', (e) => {
   lightbox.appendChild(publisherH3)
   imageDiv.append(randomImgEl)
   lightbox.append(descDiv)
-
 })
-
-
-
 
 
