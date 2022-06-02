@@ -105,8 +105,16 @@ div.form-div {
   align-items: flex-start;
 }
 
-.stats .work {
+.stats{
   width: 50%;
+  margin: auto;
+  margin-top: 0px;
+}
+
+.work {
+  width: 50%;
+  margin: auto;
+  margin-top: 0px;
 }
 
 /* h3 element */

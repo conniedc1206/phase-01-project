@@ -243,21 +243,22 @@ submitButton.addEventListener('click', (e) => {
   const nameH2 = document.createElement('h2')
   nameH2.className = 'name'
   nameH2.innerHTML = name
+  
   //stats
   const statList = document.createElement('ul')
-
+  statList.className = 'stats'
   for (const stat in randomStats) {
     let statLI = document.createElement('li')
-    statLI.className = 'stats'
+    
     statLI.innerHTML = `${stat}: ${randomStats[ stat ]}`
     statList.append(statLI)
   }
 
   // work (base + occupation)
   const workList = document.createElement('ul')
+  workList.className = 'work'
   for (const el in work) {
     let workLi = document.createElement('li')
-    workLi.className = 'work'
     workLi.innerHTML = `${el}: ${work[ el ]}`
     workList.append(workLi)
   }
