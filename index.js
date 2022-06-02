@@ -287,12 +287,14 @@ btn.forEach(button => {
     button.addEventListener('mouseover', () => {
     console.log("mouseover")
     button.style.color = 'black'
+    button.style["background-color"] = 'white'
   })
 })
 //Change text color back on mouseout
 btn.forEach(button => {
   button.addEventListener('mouseout', () => {
     button.style.color = 'white'
+    button.style["background-color"] = 'rgb(177, 28, 28)'
   })
 
 });
