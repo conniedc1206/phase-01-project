@@ -1,5 +1,6 @@
+/* styles for whole body */
 html, body {
-  height: 100%;
+  height: auto;
   width: 100%;
   font-family: 'International Super Hero', sans-serif;
 }
@@ -9,6 +10,7 @@ body {
   background-repeat: no-repeat;
 }
 
+/* styles for header: What Superhero Are You? */
 header.header {
   text-align: center;
   font-size: 60px;
@@ -18,6 +20,13 @@ header.header {
   margin-right: 250px;
 }
 
+/* styles for h2 header: Have you ever wondered...? */
+h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+/* styles for 4 images in header */
 #hero-images {
   margin: 25px;
   text-align: center;
@@ -28,39 +37,76 @@ header.header {
   height: 192px;
   margin-left: 50px;
   margin-right: 50px;
-  
 }
 
-h2 {
-  text-align: center;
-  font-size: 40px;
-}
-
+/* styles for directions in header */
 .p1 {
   text-align: center;
+  font-size: 30px;
+  margin-bottom: -15px;
+}
+
+/* styles for each form div with .form-div class */
+div.form-div {
+  width:400px;
+  margin: auto;
   font-size: 20px;
 }
 
-div.form-div {
-  display: flex;
-  justify-content: center;
-}
-
-#gender {
-  font-size: large;
-
-}
-
+/* styles for fieldset box */
 .fieldsets {
-  width: 250px;
-
 }
 
+/* styles for forms box */
 .forms {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  font-size: 25px;
+  padding-top: 20px;
+  margin-top: -15px;
 }
 
+/* style for "submit" and "next" buttons */
+.btn {
+  background-color: rgb(138, 24, 24);
+  color: white;
+  border-radius: 20%;
+  padding: 15px 20px;
+}
+
+/* style for whole lightbox */
+#lightbox {
+  opacity: 1;
+  display: flex;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+  flex-direction: column;
+  align-items: stretch;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 23%;
+  width: 55%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* styles for within lightbox */
+.name {
+  text-align: center;
+  color: aqua;
+  font-size: 60px;
+  margin-top: 25px;
+  margin-bottom: 0;
+}
+
+.pub {
+  text-align: center;
+  color: wheat;
+  font-size: 30px;
+}
 
 .randomImg {
   position: fixed;
@@ -68,6 +114,27 @@ div.form-div {
   left: 50%;
   margin-top: -450px;
   margin-left: -240px;
-  box-shadow: 0 250px 500px 0 rgba(0, 0, 0, 1), 0 250px 500px 0 rgba(0, 0, 0, 0.8);
 }
 
+.description {
+  margin-top: 700px;
+  margin-left: 20%;
+  text-align: left;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  font-size: 24px;
+}
+
+.work {
+  width: 50%;
+  margin: auto;
+  margin-top: 0px;
+}
+
+.stats{
+  width: 50%;
+  margin: auto;
+  margin-top: 0px;
+}
