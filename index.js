@@ -201,13 +201,61 @@ const submitButton = document.getElementById('submit-details')
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault()
-  let randomImg = finalArray[ Math.floor(Math.random() * finalArray.length) ].images.lg
+  const imageDiv = document.getElementById('image-div')
+  const lightbox = document.getElementById("lightbox");
+  const randomHero = finalArray[ Math.floor(Math.random() * finalArray.length) ]
+  let name = randomHero.name
+  let work = randomHero.work
+  let randomPub = randomHero.biography.publisher
+  let randomStats = randomHero.powerstats
+  let randomImg = randomHero.images.lg
+  // let randomWork = randomHero.work.occupation
+
+  //creating elements and giving them classes
   const randomImgEl = document.createElement('img')
   randomImgEl.className = 'randomImg'
-  randomImgEl.src = randomImg
-  const detailsDiv = document.getElementById('details-div')
 
-  detailsDiv.append(randomImgEl)
+  // --------------------------------
+  // publisher
+  const publisherH3 = document.createElement('h3')
+  publisherH3.className = 'pub'
+  publisherH3.innerHTML = randomPub
+
+  //name
+  const nameH2 = document.createElement('h2')
+  nameH2.className = 'name'
+  nameH2.innerHTML = name
+  //stats
+  const statList = document.createElement('ul')
+
+  for (const stat in randomStats) {
+    let statLI = document.createElement('li')
+    statLI.className = 'stats'
+    statLI.innerHTML = `${stat}: ${randomStats[ stat ]}`
+    statList.append(statLI)
+  }
+
+  // work (base + occupation)
+  const workList = document.createElement('ul')
+  for (const el in work) {
+    let workLi = document.createElement('li')
+    workLi.className = 'work'
+    workLi.innerHTML = `${el}: ${work[ el ]}`
+    workList.append(workLi)
+  }
+
+
+  // ------------------------------
+  randomImgEl.src = randomImg
+  lightbox.style.display = 'flex'
+
+  // appending details to the lightbox
+  lightbox.appendChild(workList)
+  lightbox.appendChild(statList)
+  imageDiv.append(randomImgEl)
+  lightbox.appendChild(nameH2)
+  lightbox.appendChild(publisherH3)
+
 })
 
 
