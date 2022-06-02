@@ -20,21 +20,25 @@ disableForm(weightForm)
 disableForm(hairForm)
 
 const genderNext = document.getElementById('gender-next')
+genderNext.disabled = true
 genderNext.addEventListener('click', () => {
   disableForm(genderForm)
   enableForm(heightForm)
+  heightNext.disabled = true
 })
 
 const heightNext = document.getElementById('height-next')
 heightNext.addEventListener('click', () => {
   disableForm(heightForm)
   enableForm(weightForm)
+  weightNext.disabled = true
 })
 
 const weightNext = document.getElementById('weight-next')
 weightNext.addEventListener('click', () => {
   disableForm(weightForm)
   enableForm(hairForm)
+  submitButton.disabled = true
 })
 
 //variables for our selecting user's choice
@@ -55,8 +59,9 @@ inputGender[ 0 ].addEventListener('click', () => {
   fetch('https://akabab.github.io/superhero-api/api/all.json')
     .then(res => res.json())
     .then(objects => {
-      //console.log( objects.filter(object => sortGender('Male' , object)) )
+      console.log( objects.filter(object => sortGender('Male' , object)) )
       selectedGender = objects.filter(object => sortGender('Male', object))
+      genderNext.disabled = false
     })
 })
 
@@ -64,8 +69,9 @@ inputGender[ 1 ].addEventListener('click', () => {
   fetch('https://akabab.github.io/superhero-api/api/all.json')
     .then(res => res.json())
     .then(objects => {
-      //console.log( objects.filter(object => sortGender('Female' , object)) )
+      console.log( objects.filter(object => sortGender('Female' , object)) )
       selectedGender = objects.filter(object => sortGender('Female', object))
+      genderNext.disabled = false
     })
 })
 
@@ -73,8 +79,9 @@ inputGender[ 2 ].addEventListener('click', () => {
   fetch('https://akabab.github.io/superhero-api/api/all.json')
     .then(res => res.json())
     .then(objects => {
-      //console.log( objects.filter(object => sortGender('-' , object)) )
+      console.log( objects.filter(object => sortGender('-' , object)) )
       selectedGender = objects.filter(object => sortGender('-', object))
+      genderNext.disabled = false
     })
 })
 
@@ -88,16 +95,19 @@ const sortGender = (gender, object) => {
 inputHeight[ 0 ].addEventListener('click', () => {
   console.log(selectedGender.filter(object => sortHeight(0, 65, object)))
   selectedHeight = selectedGender.filter(object => sortHeight(0, 65, object))
+  heightNext.disabled = false
 })
 
 inputHeight[ 1 ].addEventListener('click', () => {
-  //console.log(selectedGender.filter(object => sortHeight(66 , 77 , object)))
+  console.log(selectedGender.filter(object => sortHeight(66 , 77 , object)))
   selectedHeight = selectedGender.filter(object => sortHeight(66, 77, object))
+  heightNext.disabled = false
 })
 
 inputHeight[ 2 ].addEventListener('click', () => {
-  //console.log(selectedGender.filter(object => sortHeight(78 , 5000 , object)))
+  console.log(selectedGender.filter(object => sortHeight(78 , 5000 , object)))
   selectedHeight = selectedGender.filter(object => sortHeight(78, 5000, object))
+  heightNext.disabled = false
 })
 
 const sortHeight = (lowerHeight, higherHeight, object) => {
@@ -115,17 +125,19 @@ const convertHeight = (original) => {
 inputWeight[ 0 ].addEventListener('click', () => {
   console.log(selectedHeight.filter(object => sortWeight(0, 150, object)))
   selectedWeight = selectedHeight.filter(object => sortWeight(0, 150, object))
-
+  weightNext.disabled = false
 })
 
 inputWeight[ 1 ].addEventListener('click', () => {
-  //console.log(selectedHeight.filter(object => sortWeight(151 , 250 , object)))
+  console.log(selectedHeight.filter(object => sortWeight(151 , 250 , object)))
   selectedWeight = selectedHeight.filter(object => sortWeight(151, 250, object))
+  weightNext.disabled = false
 })
 
 inputWeight[ 2 ].addEventListener('click', () => {
-  //console.log(selectedHeight.filter(object => sortWeight(251 , 5000 , object)))
+  console.log(selectedHeight.filter(object => sortWeight(251 , 5000 , object)))
   selectedWeight = selectedHeight.filter(object => sortWeight(251, 5000, object))
+  weightNext.disabled = false
 })
 
 const sortWeight = (lowerWeight, higherWeight, object) => {
@@ -158,31 +170,37 @@ const convertWeight = (original) => {
 inputHairColor[ 0 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortHairColor('Black', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('Black', object))
+  submitButton.disabled = false
 })
 
 inputHairColor[ 1 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortHairColor('Brown', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('Brown', object))
+  submitButton.disabled = false
 })
 
 inputHairColor[ 2 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortHairColor('Blond', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('Blond', object))
+  submitButton.disabled = false
 })
 
 inputHairColor[ 3 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortHairColor('White', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('White', object))
+  submitButton.disabled = false
 })
 
 inputHairColor[ 4 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortHairColor('No Hair', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('No Hair', object))
+  submitButton.disabled = false
 })
 
 inputHairColor[ 5 ].addEventListener('click', () => {
   console.log(selectedWeight.filter(object => sortOtherHairColor(object)))
   finalArray = selectedWeight.filter(object => sortOtherHairColor(object))
+  submitButton.disabled = false
 })
 
 const sortHairColor = (hairColor, object) => {
@@ -244,17 +262,20 @@ submitButton.addEventListener('click', (e) => {
     workList.append(workLi)
   }
 
-
   // ------------------------------
   randomImgEl.src = randomImg
   lightbox.style.display = 'flex'
 
+  const descDiv = document.createElement('div')
+  descDiv.className = 'description'
+  descDiv.appendChild(workList)
+  descDiv.appendChild(statList)
+
   // appending details to the lightbox
-  lightbox.appendChild(workList)
-  lightbox.appendChild(statList)
-  imageDiv.append(randomImgEl)
   lightbox.appendChild(nameH2)
   lightbox.appendChild(publisherH3)
+  imageDiv.append(randomImgEl)
+  lightbox.append(descDiv)
 
 })
 
