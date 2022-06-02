@@ -271,6 +271,7 @@ submitButton.addEventListener('click', (e) => {
     lightbox.style.display = 'flex'
 
     const oops = document.createElement('img')
+    oops.className = "oops"
     oops.src = 'oops.png'
     
     lightbox.append(oops)
