@@ -120,6 +120,16 @@ div.form-div {
   margin-left: -240px;
 }
 
+.oops {
+  height: 640px;
+  width: 480px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -450px;
+  margin-left: -240px;
+}
+
 .description {
   margin-top: 700px;
   margin-left: 20%;
