@@ -265,3 +265,5 @@ submitButton.addEventListener('click', (e) => {
   imageDiv.append(randomImgEl)
   lightbox.append(descDiv)
 })
+
+
