@@ -206,62 +206,99 @@ const submitButton = document.getElementById('submit-details')
 
 submitButton.addEventListener('click', (e) => {
   e.preventDefault()
-  const imageDiv = document.getElementById('image-div')
-  const lightbox = document.getElementById("lightbox");
-  const randomHero = finalArray[ Math.floor(Math.random() * finalArray.length) ]
-  let name = randomHero.name
-  let work = randomHero.work
-  let randomPub = randomHero.biography.publisher
-  let randomStats = randomHero.powerstats
-  let randomImg = randomHero.images.lg
-  // let randomWork = randomHero.work.occupation
-
-  //creating elements and giving them classes
-  const randomImgEl = document.createElement('img')
-  randomImgEl.className = 'randomImg'
-
-  // --------------------------------
-  // publisher
-  const publisherH3 = document.createElement('h3')
-  publisherH3.className = 'pub'
-  publisherH3.innerHTML = randomPub
-
-  //name
-  const nameH2 = document.createElement('h2')
-  nameH2.className = 'name'
-  nameH2.innerHTML = name
-  
-  //stats
-  const statList = document.createElement('ul')
-  statList.className = 'stats'
-  for (const stat in randomStats) {
-    let statLI = document.createElement('li')
+  if (finalArray.length > 0) {
+    const randomHero = finalArray[Math.floor(Math.random() * finalArray.length)]
+    const imageDiv = document.getElementById('image-div')
+    const lightbox = document.getElementById("lightbox");
     
-    statLI.innerHTML = `${stat}: ${randomStats[ stat ]}`
-    statList.append(statLI)
+    //creating elements and giving them classes
+    const randomImgEl = document.createElement('img')
+    randomImgEl.className = 'randomImg'
+
+    let name = randomHero.name
+    let work = randomHero.work
+    let randomPub = randomHero.biography.publisher
+    let randomStats = randomHero.powerstats
+    let randomImg = randomHero.images.lg
+
+    // --------------------------------
+
+    randomImgEl.src = randomImg
+    // publisher
+    const publisherH3 = document.createElement('h3')
+    publisherH3.className = 'pub'
+    publisherH3.innerHTML = randomPub
+
+    //name
+    const nameH2 = document.createElement('h2')
+    nameH2.className = 'name'
+    nameH2.innerHTML = name
+    
+    //stats
+    const statList = document.createElement('ul')
+    statList.className = 'stats'
+    for (const stat in randomStats) {
+      let statLI = document.createElement('li')
+      
+      statLI.innerHTML = `${stat}: ${randomStats[stat]}`
+      statList.append(statLI)
+    }
+
+    // work (base + occupation)
+    const workList = document.createElement('ul')
+    workList.className = 'work'
+    for (const el in work) {
+      let workLi = document.createElement('li')
+      workLi.innerHTML = `${el}: ${work[el]}`
+      workList.append(workLi)
+    }
+
+    // ------------------------------
+    lightbox.style.display = 'flex'
+
+    const descDiv = document.createElement('div')
+    descDiv.className = 'description'
+    descDiv.appendChild(workList)
+    descDiv.appendChild(statList)
+
+    // appending details to the lightbox
+    lightbox.appendChild(nameH2)
+    lightbox.appendChild(publisherH3)
+    imageDiv.append(randomImgEl)
+    lightbox.append(descDiv)
+  } else {
+    const lightbox = document.getElementById("lightbox");
+    lightbox.style.display = 'flex'
+
+    const oops = document.createElement('img')
+    oops.src = 'oops.png'
+    
+    lightbox.append(oops)
   }
+})
 
-  // work (base + occupation)
-  const workList = document.createElement('ul')
-  workList.className = 'work'
-  for (const el in work) {
-    let workLi = document.createElement('li')
-    workLi.innerHTML = `${el}: ${work[ el ]}`
-    workList.append(workLi)
-  }
 
-  // ------------------------------
-  randomImgEl.src = randomImg
-  lightbox.style.display = 'flex'
 
-  const descDiv = document.createElement('div')
-  descDiv.className = 'description'
-  descDiv.appendChild(workList)
-  descDiv.appendChild(statList)
+//add js event mouseover on all buttons
+const btn = Array.from(document.getElementsByClassName('btn'))
 
-  // appending details to the lightbox
-  lightbox.appendChild(nameH2)
-  lightbox.appendChild(publisherH3)
-  imageDiv.append(randomImgEl)
-  lightbox.append(descDiv)
+//Change text color on mouseover
+btn.forEach(button => {
+    button.addEventListener('mouseover', () => {
+    console.log("mouseover")
+    button.style.color = 'black'
+  })
+})
+//Change text color back on mouseout
+btn.forEach(button => {
+  button.addEventListener('mouseout', () => {
+    button.style.color = 'white'
+  })
+
+});
+
+const x = document.getElementById('close')
+
+x.addEventListener('click', () => {
+  document.location.reload()
 })
