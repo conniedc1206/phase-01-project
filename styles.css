@@ -67,6 +67,45 @@ div.form-div {
   left: 50%;
   margin-top: -450px;
   margin-left: -240px;
-  box-shadow: 0 250px 500px 0 rgba(0, 0, 0, 1), 0 250px 500px 0 rgba(0, 0, 0, 0.8);
 }
 
+#lightbox {
+  opacity: 1;
+  display: flex;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+  flex-direction: column;
+  align-items: flex-end;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 23%;
+  width: 55%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* details of lightbox */
+
+/* h2 element */
+.name {
+  text-align: center;
+  color: aqua;
+}
+
+.stats {
+  text-align: center;
+  color: white;
+}
+
+/* h3 element */
+.pub {
+  color: wheat;
+}
+
+.work {
+  color: white;
+}
