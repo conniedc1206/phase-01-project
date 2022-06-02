@@ -67,10 +67,14 @@ div.form-div {
 
 /* style for "submit" and "next" buttons */
 .btn {
-  background-color: rgb(138, 24, 24);
+  background-color: rgb(177, 28, 28);
   color: white;
   border-radius: 20%;
   padding: 10px 15px;
+}
+
+/*.btn:hover {
+  background-color: darkred;
 }
 
 /* style for whole lightbox */
@@ -137,4 +141,12 @@ div.form-div {
   width: 50%;
   margin: auto;
   margin-top: 0px;
+}
+
+.close-cursor{
+  color: red;
+  font-size: 30px;
+  margin-left: 730px;
+  background: white;
+  text-align: center;
 }
