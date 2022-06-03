@@ -53,10 +53,6 @@ div.form-div {
   font-size: 20px;
 }
 
-/* styles for fieldset box */
-.fieldsets {
-}
-
 /* styles for forms box */
 .forms {
   text-align: center;
@@ -71,10 +67,6 @@ div.form-div {
   color: white;
   border-radius: 20%;
   padding: 10px 15px;
-}
-
-/*.btn:hover {
-  background-color: darkred;
 }
 
 /* style for whole lightbox */
@@ -96,7 +88,6 @@ div.form-div {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-
 /* styles for within lightbox */
 .name {
   text-align: center;
@@ -114,7 +105,7 @@ div.form-div {
 
 .randomImg {
   position: fixed;
-  top: 50%;
+  top: 500px;
   left: 50%;
   margin-top: -300px;
   margin-left: -240px;

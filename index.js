@@ -59,7 +59,6 @@ inputGender[ 0 ].addEventListener('click', () => {
   fetch('https://akabab.github.io/superhero-api/api/all.json')
     .then(res => res.json())
     .then(objects => {
-      console.log( objects.filter(object => sortGender('Male' , object)) )
       selectedGender = objects.filter(object => sortGender('Male', object))
       genderNext.disabled = false
     })
@@ -69,7 +68,6 @@ inputGender[ 1 ].addEventListener('click', () => {
   fetch('https://akabab.github.io/superhero-api/api/all.json')
     .then(res => res.json())
     .then(objects => {
-      console.log( objects.filter(object => sortGender('Female' , object)) )
       selectedGender = objects.filter(object => sortGender('Female', object))
       genderNext.disabled = false
     })
@@ -79,7 +77,6 @@ inputGender[ 2 ].addEventListener('click', () => {
   fetch('https://akabab.github.io/superhero-api/api/all.json')
     .then(res => res.json())
     .then(objects => {
-      console.log( objects.filter(object => sortGender('-' , object)) )
       selectedGender = objects.filter(object => sortGender('-', object))
       genderNext.disabled = false
     })
@@ -93,19 +90,16 @@ const sortGender = (gender, object) => {
 //function sortHeight that takes in selectedGender array and creates new array
 //function convertHeight that converts original ft/in value to integer value (in inches)
 inputHeight[ 0 ].addEventListener('click', () => {
-  console.log(selectedGender.filter(object => sortHeight(0, 65, object)))
   selectedHeight = selectedGender.filter(object => sortHeight(0, 65, object))
   heightNext.disabled = false
 })
 
 inputHeight[ 1 ].addEventListener('click', () => {
-  console.log(selectedGender.filter(object => sortHeight(66 , 77 , object)))
   selectedHeight = selectedGender.filter(object => sortHeight(66, 77, object))
   heightNext.disabled = false
 })
 
 inputHeight[ 2 ].addEventListener('click', () => {
-  console.log(selectedGender.filter(object => sortHeight(78 , 5000 , object)))
   selectedHeight = selectedGender.filter(object => sortHeight(78, 5000, object))
   heightNext.disabled = false
 })
@@ -123,19 +117,16 @@ const convertHeight = (original) => {
 //"click" event listeners for weight question
 //function sortWeight that takes in selectedHeight and creates a new array
 inputWeight[ 0 ].addEventListener('click', () => {
-  console.log(selectedHeight.filter(object => sortWeight(0, 150, object)))
   selectedWeight = selectedHeight.filter(object => sortWeight(0, 150, object))
   weightNext.disabled = false
 })
 
 inputWeight[ 1 ].addEventListener('click', () => {
-  console.log(selectedHeight.filter(object => sortWeight(151 , 250 , object)))
   selectedWeight = selectedHeight.filter(object => sortWeight(151, 250, object))
   weightNext.disabled = false
 })
 
 inputWeight[ 2 ].addEventListener('click', () => {
-  console.log(selectedHeight.filter(object => sortWeight(251 , 5000 , object)))
   selectedWeight = selectedHeight.filter(object => sortWeight(251, 5000, object))
   weightNext.disabled = false
 })
@@ -153,39 +144,32 @@ const convertWeight = (original) => {
 
 //"click" event listeners for hair color question
 //function sortHairColor that takes in selectedWeight and creates new array
-
 inputHairColor[ 0 ].addEventListener('click', () => {
-  console.log(selectedWeight.filter(object => sortHairColor('Black', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('Black', object))
   submitButton.disabled = false
 })
 
 inputHairColor[ 1 ].addEventListener('click', () => {
-  console.log(selectedWeight.filter(object => sortHairColor('Brown', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('Brown', object))
   submitButton.disabled = false
 })
 
 inputHairColor[ 2 ].addEventListener('click', () => {
-  console.log(selectedWeight.filter(object => sortHairColor('Blond', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('Blond', object))
   submitButton.disabled = false
 })
 
 inputHairColor[ 3 ].addEventListener('click', () => {
-  console.log(selectedWeight.filter(object => sortHairColor('White', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('White', object))
   submitButton.disabled = false
 })
 
 inputHairColor[ 4 ].addEventListener('click', () => {
-  console.log(selectedWeight.filter(object => sortHairColor('No Hair', object)))
   finalArray = selectedWeight.filter(object => sortHairColor('No Hair', object))
   submitButton.disabled = false
 })
 
 inputHairColor[ 5 ].addEventListener('click', () => {
-  console.log(selectedWeight.filter(object => sortOtherHairColor(object)))
   finalArray = selectedWeight.filter(object => sortOtherHairColor(object))
   submitButton.disabled = false
 })
@@ -278,15 +262,12 @@ submitButton.addEventListener('click', (e) => {
   }
 })
 
-
-
 //add js event mouseover on all buttons
 const btn = Array.from(document.getElementsByClassName('btn'))
-
 //Change text color on mouseover
 btn.forEach(button => {
     button.addEventListener('mouseover', () => {
-    console.log("mouseover")
+    //console.log("mouseover")
     button.style.color = 'black'
     button.style["background-color"] = 'white'
   })
@@ -300,6 +281,7 @@ btn.forEach(button => {
 
 });
 
+//add click event to close button
 const x = document.getElementById('close')
 
 x.addEventListener('click', () => {
