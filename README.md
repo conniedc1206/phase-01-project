@@ -1,30 +1,17 @@
-<h1 align="center">Welcome to Which Superhero Are You? 👋</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-1.0-blue.svg?cacheSeconds=2592000" />
-  <a href="https://github.com/Sweens0124/phase-01-project.git" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-</p>
+# Which Superhero Are You?
 
-> In this app, you will find out who is your Superhero Twin! Follow the series of questions and click 'Submit' to display the details of the Superhero that you match closest to!
+"Which Superhero Are You?" is a Single Page Application (SPA) that allows users to discover who their "Superhero Twin" is by answering a series of questions and clicking "submit" to display the details of the Superhero that matches them.
 
-### ✨ [Demo]( https://github.com/Sweens0124/phase-01-project.git)
+Technologies used: Our frontend was built with HTML, CSS, and JavaScript and communicates with a public API (https://akabab.github.io/superhero-api/api/)
 
-## Usage
+## Installation
 
-```sh
-Go to the URL, read over the website and follow the instructions given!
-```
+Fork and clone this repository onto your local environment. Open index.html on your default browser. 
 
-## Author
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-👤 **Lucas, Connie, and Yifan!**
-
-* Github: [@Sweens0124](https://github.com/Sweens0124)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+## Creators
+Connie Park [Gitlink](https://github.com/conniedc1206), [Linkdin](https://www.linkedin.com/in/conniepark2)
+Yifan Wu
+Lucas Sweeney
