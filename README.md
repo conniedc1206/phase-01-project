@@ -1,4 +1,5 @@
 # Which Superhero Are You?
+![What Superhero Are You?](superhero-spa.png)
 
 "Which Superhero Are You?" is a Single Page Application (SPA) that allows users to discover who their "Superhero Twin" is by answering a series of questions and clicking "submit" to display the details of the Superhero that matches them.
 
