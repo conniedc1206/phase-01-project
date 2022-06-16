@@ -12,7 +12,10 @@ Fork and clone this repository onto your local environment. Open index.html on y
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-## Creators
-Connie Park [Gitlink](https://github.com/conniedc1206), [Linkdin](https://www.linkedin.com/in/conniepark2)
+Creators
+---
+Connie Park [Github](https://github.com/conniedc1206)     [Linkedin](https://www.linkedin.com/in/conniepark2)
+
 Yifan Wu
+
 Lucas Sweeney
