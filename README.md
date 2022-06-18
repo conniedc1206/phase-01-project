@@ -9,17 +9,17 @@ Technologies used: Our frontend was built with HTML, CSS, and JavaScript and com
 
 ## Goals
 Our goal was to build an application and simulate a professional work environment:
-*we first planned out your designs and features
-*we pitched our project
-*we used Github to collaborate
+* we first planned out your designs and features
+* we pitched our project
+* we used Github to collaborate
 
 ## Accomplishments
-*our application fetches data from a public API with over 700 superhero's information
-*we created a series of filters that allows users to select multiple features about themselves to more accurately narrow down a matching superhero
-*we were also able to display the matching result using a lightbox feature (this was our stretch goal)
+* our application fetches data from a public API with over 700 superhero's information
+* we created a series of filters that allows users to select multiple features about themselves to more accurately narrow down a matching superhero
+* we were also able to display the matching result using a lightbox feature (this was our stretch goal)
 
 ## Challenges/Future Improvements
-*we intended to make only 1 question appear at a time for the user
+* we intended to make only 1 question appear at a time for the user
 
 ## Installation
 
