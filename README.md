@@ -7,6 +7,8 @@ My small but mighty team (Lucas, Yifan, and I) completed this JavaScript project
 
 Technologies used: Our frontend was built with HTML, CSS, and JavaScript and communicates with a public API (https://akabab.github.io/superhero-api/api/)
 
+[DEMO](https://conniedc1206.github.io/what-superhero-are-you-app/)
+
 ## Goals
 Our goal was to build an application and simulate a professional work environment:
 * we first planned out your designs and features
